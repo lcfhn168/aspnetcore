@@ -21,14 +21,15 @@
     <YarnInputs Include="$(YarnWorkingDir)**" Exclude="$(YarnWorkingDir)node_modules\**;$(YarnWorkingDir)*.d.ts" />
     <YarnOutputs Include="wwwroot\AuthenticationService.js" />
     <YarnOutputs Include="wwwroot\AuthenticationService.js.map" />
-    <None Include="C:\work\AspNetCore2\src\Components\Blazor\WebAssembly.Authentication\src\Interop\AuthenticationService.ts" />
-    <None Include="C:\work\AspNetCore2\src\Components\Blazor\WebAssembly.Authentication\src\Interop\package.json" />
-    <None Include="C:\work\AspNetCore2\src\Components\Blazor\WebAssembly.Authentication\src\Interop\tsconfig.json" />
-    <None Include="C:\work\AspNetCore2\src\Components\Blazor\WebAssembly.Authentication\src\Interop\webpack.config.js" />
-    <None Include="C:\work\AspNetCore2\src\Components\Blazor\WebAssembly.Authentication\src\Interop\yarn.lock" />
+    <Content Include="@(YarnOutputs)" />
+    <None Include="Interop\AuthenticationService.ts" />
+    <None Include="Interop\package.json" />
+    <None Include="Interop\tsconfig.json" />
+    <None Include="Interop\webpack.config.js" />
+    <None Include="Interop\yarn.lock" />
     <None Include="wwwroot\.gitignore" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Reference Include="Mono.WebAssembly.Interop" />
     <Reference Include="Microsoft.AspNetCore.Blazor" />
@@ -46,7 +47,7 @@
     <Yarn Command="run build:release" WorkingDirectory="$(YarnWorkingDir)" Condition="'$(Configuration)' == 'Release'" />
     <Yarn Command="run build:debug" WorkingDirectory="$(YarnWorkingDir)" Condition="'$(Configuration)' == 'Debug'" />
     <ItemGroup>
-      <Content Include="$(YarnOutputPattern)" />      
+      <Content Include="$(YarnOutputPattern)" />
     </ItemGroup>
   </Target>
 
