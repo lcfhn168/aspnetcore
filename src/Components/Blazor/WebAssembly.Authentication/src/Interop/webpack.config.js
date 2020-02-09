@@ -19,7 +19,7 @@ module.exports = env => {
         },
         output: {
             filename: 'AuthenticationService.js',
-            path: path.resolve(__dirname, '..', 'wwwroot'),
+            path: path.resolve(__dirname, 'dist', env.configuration),
         },
     };
 };
